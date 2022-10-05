@@ -1,32 +1,24 @@
 CREATE TABLE `data_platform_price_master_price_master_data`
 (
-    `Product`                     varchar(40) NOT NULL,
-    `SalesOrPurchaseOrganization` varchar(40) NOT NULL,
-    `DistributionChannel`         varchar(40) NOT NULL,
-    `BusinessPartner`             varchar(40) NOT NULL,
-    `ConditionRecord`             varchar(40) NOT NULL,
-    `ConditionSequentialNumber`   varchar(40) NOT NULL,
-    `ConditionType`               varchar(40) NOT NULL,
-    `ConditionValidityEndDate`    varchar(40) NOT NULL,
-    `ConditionValidityStartDate`  varchar(40) NOT NULL,
-    `CreationDate`                varchar(40) NOT NULL,
-    `ConditionRateValue`          varchar(40) NOT NULL,
-    `ConditionRateValueUnit`      varchar(40) NOT NULL,
-    `ConditionRateRatio`          varchar(40) NOT NULL,
-    `ConditionRateRatioUnit`      varchar(40) NOT NULL,
-    `ConditionRateAmount`         varchar(40) NOT NULL,
-    `ConditionCurrency`           varchar(40) NOT NULL,
-    `ConditionQuantity`           varchar(40) NOT NULL,
-    `ConditionQuantityUnit`       varchar(40) NOT NULL,
-    `BaseUnit`                    varchar(40) NOT NULL,
-    `ConditionLowerLimit`         varchar(40) NOT NULL,
-    `ConditionLowerLimitAmount`   varchar(40) NOT NULL,
-    `ConditionLowerLimitRatio`    varchar(40) NOT NULL,
-    `ConditionUpperLimit`         varchar(40) NOT NULL,
-    `ConditionUpperLimitAmount`   varchar(40) NOT NULL,
-    `ConditionUpperLimitRatio`    varchar(40) NOT NULL,
-    `ConditionIsDeleted`          varchar(40) NOT NULL,
-    `PaymentTerms`                varchar(40) NOT NULL,
-     PRIMARY KEY (`Price`)
+    `BusinessPartner`             varchar(10) NOT NULL,  --新規追加
+    `ConditionRecord`             varchar(10) NOT NULL,
+    `ConditionSequentialNumber`   varchar(2) NOT NULL,
+    `ConditionType`               varchar(4) NOT NULL,
+    `ConditionValidityEndDate`    varchar(80) NOT NULL,
+    `ConditionValidityStartDate`  varchar(80) DEFAULT NULL,
+    `Product`                     varchar(40) DEFAULT NULL,
+    `SalesOrPurchaseOrganization` varchar(4) DEFAULT NULL,
+    `DistributionChannel`         varchar(2) DEFAULT NULL,
+    `Customer`                    varchar(10) DEFAULT NULL,  --新規追加
+    `Supplier`                    varchar(10) DEFAULT NULL,  --新規追加
+    `CreationDate`                varchar(80) DEFAULT NULL,
+    `ConditionRateValue`          varchar(15) DEFAULT NULL,
+    `ConditionRateValueUnit`      varchar(5) DEFAULT NULL,
+    `ConditionRateRatio`          varchar(5) DEFAULT NULL,
+    `ConditionRateRatioUnit`      varchar(5) DEFAULT NULL,
+    `ConditionCurrency`           varchar(5) DEFAULT NULL,
+    `BaseUnit`                    varchar(3) DEFAULT NULL,
+    `ConditionIsDeleted`          tinyint(1) DEFAULT NULL,
+     PRIMARY KEY (`BusinessPartner`, `ConditionRecord`, `ConditionSequentialNumber`, `ConditionType`, `ConditionValidityEndDate`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

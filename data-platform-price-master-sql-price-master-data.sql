@@ -1,8 +1,9 @@
 CREATE TABLE `data_platform_price_master_price_master_data`
 (
-    `BusinessPartner`             varchar(10) NOT NULL,  --新規追加
-    `ConditionRecord`             varchar(10) NOT NULL,
-    `ConditionSequentialNumber`   varchar(2) NOT NULL,
+    `BusinessPartner`             varchar(10) NOT NULL,     --新規追加
+    `ConditionRecordCategory`     varchar(2) NOT NULL,      --新規追加
+    `ConditionRecord`             int(10) NOT NULL,
+    `ConditionSequentialNumber`   int(2) NOT NULL,
     `ConditionType`               varchar(4) NOT NULL,
     `ConditionValidityEndDate`    varchar(80) NOT NULL,
     `ConditionValidityStartDate`  varchar(80) DEFAULT NULL,
@@ -19,6 +20,6 @@ CREATE TABLE `data_platform_price_master_price_master_data`
     `ConditionCurrency`           varchar(5) DEFAULT NULL,
     `BaseUnit`                    varchar(3) DEFAULT NULL,
     `ConditionIsDeleted`          tinyint(1) DEFAULT NULL,
-     PRIMARY KEY (`BusinessPartner`, `ConditionRecord`, `ConditionSequentialNumber`, `ConditionType`, `ConditionValidityEndDate`)
+     PRIMARY KEY (`BusinessPartner`, `ConditionRecordCategory`, `ConditionRecord`, `ConditionSequentialNumber`, `ConditionType`, `ConditionValidityEndDate`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;

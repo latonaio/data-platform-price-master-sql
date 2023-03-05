@@ -11,6 +11,7 @@ CREATE TABLE `data_platform_price_master_price_master_data`
     `Product`                     varchar(40) DEFAULT NULL,
     `ConditionType`               varchar(4) NOT NULL,
     `CreationDate`                date DEFAULT NULL,
+    `LastChangeDate`              date DEFAULT NULL,
     `ConditionRateValue`          float(13) DEFAULT NULL,
     `ConditionRateValueUnit`      varchar(3) DEFAULT NULL,
     `ConditionRateRatio`          float(5) DEFAULT NULL,

@@ -3,7 +3,6 @@ CREATE TABLE `data_platform_price_master_price_master_data`
     `SupplyChainRelationshipID`   int(16) NOT NULL,
     `Buyer`                       int(12) NOT NULL,
     `Seller`                      int(12) NOT NULL,
---  `ConditionRecordCategory`     varchar(2) NOT NULL,
     `ConditionRecord`             int(12) NOT NULL,
     `ConditionSequentialNumber`   int(2) NOT NULL,
     `ConditionValidityEndDate`    date NOT NULL,

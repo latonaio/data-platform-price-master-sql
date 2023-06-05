@@ -1,0 +1,27 @@
+CREATE TABLE `data_platform_price_master_price_master_data`
+(
+    `SupplyChainRelationshipID`   int(16) NOT NULL,
+    `Buyer`                       int(12) NOT NULL,
+    `Seller`                      int(12) NOT NULL,
+    `ConditionRecord`             int(12) NOT NULL,
+    `ConditionSequentialNumber`   int(2) NOT NULL,
+    `ConditionValidityStartDate`  date NOT NULL,
+    `ConditionValidityEndDate`    date NOT NULL,
+    `Product`                     varchar(40) DEFAULT NULL,
+    `ConditionType`               varchar(4) NOT NULL,
+    `CreationDate`                date DEFAULT NULL,
+    `LastChangeDate`              date DEFAULT NULL,
+    `ConditionRateValue`          float(13) DEFAULT NULL,
+    `ConditionRateValueUnit`      int(6) DEFAULT NULL,
+    `ConditionScaleQuantity`      float(15) DEFAULT NULL,
+    `ConditionCurrency`           varchar(5) DEFAULT NULL,
+    `IsMarkedForDeletion`         tinyint(1) DEFAULT NULL,
+    
+    PRIMARY KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`, `ConditionRecord`, `ConditionSequentialNumber`, `Product`, `ConditionValidityStartDate`, `ConditionValidityEndDate`),
+
+    CONSTRAINT `DataPlatformPriceMasterPriceMasterDataSupplyChainRelationshipID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_supply_chain_relationship_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`),
+    CONSTRAINT `DataPlatformPriceMasterPriceMasterDataProduct_fk` FOREIGN KEY (`Product`) REFERENCES `data_platform_product_master_general_data` (`Product`),
+    CONSTRAINT `DataPlatformPriceMasterPriceMasterDataConditionCurrency_fk` FOREIGN KEY (`ConditionCurrency`) REFERENCES `data_platform_currency_currency_data` (`Currency`)
+
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;

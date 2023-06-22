@@ -13,7 +13,7 @@ CREATE TABLE `data_platform_price_master_price_master_data`
     `LastChangeDate`              date DEFAULT NULL,
     `ConditionRateValue`          float(13) DEFAULT NULL,
     `ConditionRateValueUnit`      int(6) DEFAULT NULL,
-    `ConditionScaleQuantity`      float(15) DEFAULT NULL,
+    `ConditionScaleQuantity`      int(13) DEFAULT NULL,
     `ConditionCurrency`           varchar(5) DEFAULT NULL,
     `IsMarkedForDeletion`         tinyint(1) DEFAULT NULL,
     

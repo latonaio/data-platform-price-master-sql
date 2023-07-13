@@ -19,7 +19,7 @@ CREATE TABLE `data_platform_price_master_price_master_data`
     
     PRIMARY KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`, `ConditionRecord`, `ConditionSequentialNumber`, `Product`, `ConditionValidityStartDate`, `ConditionValidityEndDate`),
 
-    CONSTRAINT `DPFMPriceMasterPriceMasterDataSCRID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_supply_chain_relationship_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`),
+    CONSTRAINT `DPFMPriceMasterPriceMasterDataSCRID_fk` FOREIGN KEY (`SupplyChainRelationshipID`, `Buyer`, `Seller`) REFERENCES `data_platform_scr_general_data` (`SupplyChainRelationshipID`, `Buyer`, `Seller`),
     CONSTRAINT `DPFMPriceMasterPriceMasterDataProduct_fk` FOREIGN KEY (`Product`) REFERENCES `data_platform_product_master_general_data` (`Product`),
     CONSTRAINT `DPFMPriceMasterPriceMasterDataConditionCurrency_fk` FOREIGN KEY (`ConditionCurrency`) REFERENCES `data_platform_currency_currency_data` (`Currency`)
 
